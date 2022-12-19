@@ -10,14 +10,14 @@ string timeConversion(string s)
   
   int hour = stoi(hour_string);
   
-  string newTime;
+  string new_hour, newTime;
   
   if(s[n-2] == 'A')
   {
     if(hour == 12)
     {
       new_hour = "00";
-      newTime = new_hour.append(s.substr(2, 6);
+      newTime = new_hour.append(s.substr(2, 6));
                                 
       return newTime;
     }
@@ -33,7 +33,7 @@ string timeConversion(string s)
       return s.substr(0, n-2);
     }
     new_hour = to_string(hour + 12);
-    newTime = new_hour.append(s.substr(2, 6);
+    newTime = new_hour.append(s.substr(2, 6));
 
     return newTime;
   }
@@ -42,7 +42,10 @@ string timeConversion(string s)
 
 int main()
 {
-  //
+  string s;
+  getline(cin, s);
+  
+  cout << timeConversion(s);
   
   return 0;
 }

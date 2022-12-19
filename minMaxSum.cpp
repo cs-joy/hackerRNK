@@ -4,11 +4,11 @@ using namespace std;
 
 typedef long long ll;
 
-void minMaxSum(vector<int> arr)
+void minMaxSum(vector<ll> arr)
 {
   int n = arr.size();
   
-  int sum = 0;
+  ll sum = 0;
   
   ll max = arr[0], min = arr[0];
   
@@ -30,7 +30,7 @@ void minMaxSum(vector<int> arr)
 
 int main()
 {
-  vector<int> arr {1, 2, 3, 4, 5};
+  vector<ll> arr {1, 2, 3, 4, 5};
   minMaxSum(arr);
   
   return 0;

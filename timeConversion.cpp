@@ -18,6 +18,7 @@ string timeConversion(string s)
     {
       new_hour = "00";
       newTime = new_hour.append(s.substr(2, 6);
+                                
       return newTime;
     }
     else
@@ -25,10 +26,23 @@ string timeConversion(string s)
       return s.substr(0, n-2);
     }
   }
+  else
+  {
+    if(hour == 12)
+    {
+      return s.substr(0, n-2);
+    }
+    new_hour = to_string(hour + 12);
+    newTime = new_hour.append(s.substr(2, 6);
+
+    return newTime;
+  }
   
 }
 
 int main()
 {
+  //
+  
   return 0;
 }

@@ -69,3 +69,6 @@ int main() {
     
     return 0;
 }
+
+
+// ref:: https://en.wikipedia.org/wiki/Independent_set_%28graph_theory%29

@@ -11,6 +11,22 @@ vector<int> adj[100001];
 bool seen[100001];
 int dp[100001];
 
+void solve(int u, int p)
+{
+    seen[u] = true;
+    dp[u][0] = 0;
+    dp[u][1] = A[u];
+    
+    for(auto & v: adj[u])
+    {
+        if(v != p)
+        {
+            solve(v, u);
+            dp[u][0] += max(dp[v][0], dp[v][1]);
+            dp[u][1] += dp[v][0];
+        }
+    }
+}
 
 int main() {
     cin >> N;
@@ -32,7 +48,23 @@ int main() {
             adj[a].push_back(b);
             adj[b].push_back(a);
         }
+        else if(op == 'C')
+        {
+            cin >> a;
+            solve(a, a);
+            A[M++] = max(dp[a][0], dp[1][a]);
+        }
     }
+    int ans = 0;
+    for(int i=1; i<=M; i++)
+    {
+        if(!seen[i])
+        {
+            solve(i, i);
+            ans += max(dp[i][0], dp[i][1]);
+        }
+    }
+    cout << ans;
     
     return 0;
 }
